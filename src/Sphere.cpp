@@ -28,7 +28,7 @@ bool Sphere::intersect(
     } else {
       t = min(t1, t2);
     }
-    n = (ray.origin + t * ray.direction - center).normalized();
+    n = (ray.origin + t * ray.direction - center) / radius;
     return true;
   }
 

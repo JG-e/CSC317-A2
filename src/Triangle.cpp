@@ -20,7 +20,7 @@ bool Triangle::intersect(
 
   if (x[0] >= 0 && x[1] >= 0 && x[2] >= min_t && x[0] + x[1] <= 1) {
     t = x[2];
-    n = (x2 - x1).cross(x3 - x1).normalized();
+    n = t1.cross(t2).normalized();
     return true;
   }
   return false;
