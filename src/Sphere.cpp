@@ -8,9 +8,9 @@ bool Sphere::intersect(
   const Ray & ray, const double min_t, double & t, Eigen::Vector3d & n) const
 {
   ////////////////////////////////////////////////////////////////////////////
-  Vector3d a = ray.direction.dot(ray.direction);
-  Vector3d b = 2 * ray.direction.dot(ray.origin - center);
-  Vector3d c = (ray.origin - center).dot(ray.origin - center) - radius * radius;
+  double a = ray.direction.dot(ray.direction);
+  double b = 2 * ray.direction.dot(ray.origin - center);
+  double c = (ray.origin - center).dot(ray.origin - center) - radius * radius;
 
   double discriminant = b * b - 4 * a * c;
   if (discriminant < 0) {
