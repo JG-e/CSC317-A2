@@ -15,7 +15,7 @@ bool Triangle::intersect(
   
   Matrix3d A; 
   A << t1, t2, -ray.direction;
-  Vector3d b = {1, ray.origin - x1, 1};
+  Vector3d b(1, ray.origin - x1, 1);
   Vector3d x = A.inverse() * b;
 
   if (x[0] >= 0 && x[1] >= 0 && x[2] >= min_t && x[0] + x[1] <= 1) {
