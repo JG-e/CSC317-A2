@@ -3,6 +3,8 @@
 #include <Eigen/Dense>
 
 using namespace Eigen;
+using namespace std;
+
 bool Triangle::intersect(
   const Ray & ray, const double min_t, double & t, Eigen::Vector3d & n) const
 {
