@@ -7,9 +7,9 @@ bool Triangle::intersect(
   const Ray & ray, const double min_t, double & t, Eigen::Vector3d & n) const
 {
   ////////////////////////////////////////////////////////////////////////////
-  Vector3d x1 = corners[0];
-  Vector3d x2 = corners[1];
-  Vector3d x3 = corners[2];
+  Vector3d x1 = corners.get<0>();
+  Vector3d x2 = corners.get<1>();
+  Vector3d x3 = corners.get<2>();
   Vector3d t1 = x2 - x1; 
   Vector3d t2 = x3 - x1;
   
