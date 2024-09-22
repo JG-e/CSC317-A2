@@ -11,6 +11,7 @@ bool first_hit(
   ////////////////////////////////////////////////////////////////////////////
   // Loop over all objects in the scene, call their intersect method, and
   // find the closest intersection.
+  bool found = false;
   for (int i = 0; i < objects.size(); i++) {
     double t_obj;
     Eigen::Vector3d n_obj;
@@ -19,10 +20,11 @@ bool first_hit(
         t = t_obj;
         n = n_obj;
         hit_id = i;
+        found = true;
       }
     }
   }
-  
+  return found;
   ////////////////////////////////////////////////////////////////////////////
 }
 
